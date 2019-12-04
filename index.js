@@ -111,8 +111,8 @@ Web3ProviderEngine.prototype.removeProvider = function(source){
   self._providers.splice(index, 1)
 }
 
-Web3ProviderEngine.prototype.send = function(payload){
-  throw new Error('Web3ProviderEngine does not support synchronous requests.')
+Web3ProviderEngine.prototype.send = function(payload, cb){
+  this.sendAsync(payload, cb);
 }
 
 Web3ProviderEngine.prototype.sendAsync = function(payload, cb){
